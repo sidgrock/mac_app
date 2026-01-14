@@ -26,10 +26,10 @@ jobs:
         run: |
           pyinstaller --onefile main.py
 
-      - name: Test run macOS app (headless)
+      - name: Test run macOS binary
         run: |
-          chmod +x dist/main.app/Contents/MacOS/main
-          dist/main.app/Contents/MacOS/main || true
+          chmod +x dist/main
+          dist/main || true
 
       - name: Install create-dmg
         run: |
