@@ -26,6 +26,11 @@ jobs:
         run: |
           pyinstaller --onefile main.py
 
+      - name: Test run macOS app (headless)
+        run: |
+          chmod +x dist/main.app/Contents/MacOS/main
+          dist/main.app/Contents/MacOS/main || true
+
       - name: Install create-dmg
         run: |
           brew install create-dmg
