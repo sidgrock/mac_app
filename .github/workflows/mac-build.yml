@@ -32,7 +32,13 @@ jobs:
 
       - name: Create DMG
         run: |
-          create-dmg dist/main.app
+          create-dmg \
+            --volname "mac_app" \
+            --window-size 600 400 \
+            --app-drop-link 300 200 \
+            mac_app.dmg \
+            dist/main.app
+
 
       - name: Upload DMG
         uses: actions/upload-artifact@v4
